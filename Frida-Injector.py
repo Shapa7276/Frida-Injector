@@ -14,7 +14,7 @@ archdata=["arm","arm64","x86","x86_64"]
 abislist=["armeabi-v7a","arm64-v8a","x86","x86_64"]
 parser = argparse.ArgumentParser(description='Frida Injection')
 parser.add_argument('-i',metavar='inputfile',help='APK_NAME.apk')
-parser.add_argument('-m',metavar='(1 or 2))',help='Method 1:-Injecting into shared library (Prefered method) Method 2:-Injecting in native library (JNI)')
+parser.add_argument('-m',metavar='(1 or 2))',help='Method 1:-Injecting into bytecode  (Preferred method) Method 2:-Injecting as dependency to a native library (JNI)')
 args = parser.parse_args()
 apk_name=args.i
 method=args.m
