@@ -4,7 +4,7 @@
 **#Usage:- Frida-Injector.py [-h] [-i inputfile] [-m 1 or 2)]**
 
 * Method1:-Injecting into shared library (Preferred method)
-* Method2:-Using native library (JNI)
+* Method2:-Injecting into native library (JNI)
 
 ![GitHub Logo](/images/Screenshot_1.jpg)
 **#prerequisite :- latest versions of adb ,apktool,USB debugging enabled on device and Configure device with Burp proxy using (https://portswigger.net/support/installing-burp-suites-ca-certificate-in-an-android-device)**
