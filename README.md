@@ -3,7 +3,7 @@
 
 **#Usage:- Frida-Injector.py [-h] [-i inputfile] [-m 1 or 2)]**
 
-* Method1:-Injecting into shared library (Prefered method)
+* Method1:-Injecting into shared library (Preferred method)
 * Method2:-Using native library (JNI)
 
 ![GitHub Logo](/images/Screenshot_1.jpg)
