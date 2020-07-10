@@ -1,0 +1,12 @@
+# test
+
+This repo will maintain to make notes on xs leaks 
+
+ Frames are very useful in creating pages that combine content from multiple sites without
+requiring explicit cooperation. 
+##JavaScript is provided the onload handler for each frame:
+
+Need to read 
+http://u.cs.biu.ac.il/~herzbea/security/15-01-XSSearch.pdf
+
+window.length property which is cross-site accessible. 
