@@ -3,8 +3,8 @@
 
 **#Usage:- Frida-Injector.py [-h] [-i inputfile] [-m 1 or 2)]**
 
-* Method1:-Injecting into shared library (Preferred method)
-* Method2:-Injecting into native library (JNI)
+* Method1:-Injecting into bytecode (Preferred method)
+* Method2:-Injecting as dependency to a native library (JNI)
 
 ![GitHub Logo](/images/Screenshot_1.jpg)
 **#prerequisite :- latest versions of adb ,apktool,USB debugging enabled on device and Configure device with Burp proxy using (https://portswigger.net/support/installing-burp-suites-ca-certificate-in-an-android-device)**
@@ -12,7 +12,7 @@
 
 What it does
 
-**Method1:-Injecting into shared library**
+**Method1:-Injecting into bytecode**
 
 * Reverse the apk using apktool.
 * Download all the lated frida gadget from (https://github.com/frida/frida/releases/latest)
@@ -24,7 +24,7 @@ What it does
 * Push the Burp certicate on local temp directory 
 * Call frida function to bypass SSL- pinning 
 
-**Method2:-Injecting into native library**
+**Method2:-Injecting as dependency to a native library**
 * Reverse the apk using apktool.
 * Download all the lated frida gadget from (https://github.com/frida/frida/releases/latest)
 * List the availble native directory to Inject the frida-agent.so
