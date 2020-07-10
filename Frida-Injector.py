@@ -135,7 +135,7 @@ def install_apk():
         if "product" in devices:
             print("Devices is connected and installing the APK")
             subprocess.call(['adb','install',"new-aligned-debugSigned.apk"])
-            print(" Copying the burp Certicate local temp")
+            print(" Copying the burp Certificate to local temp on device")
             subprocess.call(['adb','push',"cert-der.crt","/data/local/tmp/cert-der.crt"])
             input(Fore.RED +"   To Start Frida Server Open the application on device and press enter :-")
             print(Style.RESET_ALL)
