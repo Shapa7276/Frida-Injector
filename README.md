@@ -10,12 +10,35 @@
 **#prerequisite :- latest versions of adb ,apktool,USB debugging enabled on device and Configure device with Burp proxy using (https://portswigger.net/support/installing-burp-suites-ca-certificate-in-an-android-device)**
 
 
-Logic used to build the tool
+What it does
+
+**Method1:-Injecting into shared library**
+
+* Reverse the apk using apktool.
+* Download all the lated frida gadget from (https://github.com/frida/frida/releases/latest)
+* copy aproriate frida-gadget
+* Inject smali to load frida-gadget Library
+* Recompile the application 
+* Sign with uber-apk-signer 
+* Install the application to connected Device 
+* Push the Burp certicate on local temp directory 
+* Call frida function to bypass SSL- pinning 
+
+**Method2:-Injecting into native library**
+* Reverse the apk using apktool.
+* Download all the lated frida gadget from (https://github.com/frida/frida/releases/latest)
+* List the availble native directory to Inject the frida-agent.so
+* add frida-agent.so as a dependency of native library
+* Recompile the application 
+* Sign with uber-apk-signer 
+* Install the application to connected Device 
+* Push the Burp certicate on local temp directory 
+* Call frida function to bypass SSL- pinning 
 
 
 **Referene :-**
 
-*https://koz.io/using-frida-on-android-without-root/
-*https://lief.quarkslab.com/doc/stable/tutorials/09_frida_lief.html
-*https://fadeevab.com/frida-gadget-injection-on-android-no-root-2-methods/
-*https://github.com/kiks7/frida-non-root
+* https://koz.io/using-frida-on-android-without-root/
+* https://lief.quarkslab.com/doc/stable/tutorials/09_frida_lief.html
+* https://fadeevab.com/frida-gadget-injection-on-android-no-root-2-methods/
+* https://github.com/kiks7/frida-non-root
