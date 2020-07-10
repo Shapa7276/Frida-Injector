@@ -147,6 +147,12 @@ def install_apk():
 def inject_native():
     isdir = os.path.isdir(outputdirectory+'/lib')
     if isdir==True:
+        isgadgetdir=os.path.isdir('gadget')
+        if (isgadgetdir==False):
+            print("Downloading Latest Gadget")
+            os.mkdir('gadget')
+            for a in archdata:
+                download_gadget(a)
         arch=subprocess.check_output('ls '+outputdirectory+'/lib/',shell=True)
         arch_name=arch.decode("utf-8").rstrip()
         for i,j in zip(archdata,abislist):
