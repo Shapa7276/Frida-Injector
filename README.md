@@ -1,4 +1,4 @@
-# "Frida-Injector" It automates  the Injection of frida gadgets on andriod application to run frida Server on non rooted Device 
+# "Frida-Injector" It automates  the Injection of FRIDA-gadget binary into an Android application , in order to Hook function or bypass SSL Pinning of that application on Non rooted Device
 
 
 **#Usage:- Frida-Injector.py [-h] [-i inputfile] [-m 1 or 2)]**
