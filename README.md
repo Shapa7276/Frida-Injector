@@ -1,3 +1,4 @@
+#Author Sharanbasu Panegav
 # "Frida-Injector" It automates  the Injection of FRIDA-gadget binary into an Android application , in order to Hook function or bypass SSL Pinning of that application on Non rooted Device
 
 
