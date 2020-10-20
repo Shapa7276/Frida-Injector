@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#!Author: Sharanbasu Panegav
 import subprocess,sys,os,wget,lief
 from pathlib import Path
 from shutil import copyfile
