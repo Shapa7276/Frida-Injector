@@ -66,15 +66,16 @@ def copygadget():
     isdir = os.path.isdir(outputdirectory+'/lib')
     if isdir==True:
         arch=subprocess.check_output('ls '+outputdirectory+'/lib/',shell=True)
-        arch_name=arch.decode("utf-8").rstrip()
-        if arch_name in abislist:
-            print("copying the architecture  "+arch_name)
-            if arch_name=="armeabi-v7a":
-                copyfile("gadget/arm/libfrida-gadget.so",Path(outputdirectory+"/lib/"+arch_name+"/libfrida-gadget.so"))
-            elif arch_name=="arm64-v8a":
-                copyfile("gadget/arm64/libfrida-gadget.so",Path(outputdirectory+"/lib/"+arch_name+"/libfrida-gadget.so"))
-            else:
-                copyfile("gadget/"+arch_name+"/libfrida-gadget.so",Path(outputdirectory+"/lib/"+arch_name+"/libfrida-gadget.so"))
+        arch_name_list=arch.decode("utf-8").splitlines()
+        for arch_name in arch_name_list:
+            if arch_name in abislist:
+                print("copying the architecture  "+arch_name)
+                if arch_name=="armeabi-v7a":
+                    copyfile("gadget/arm/libfrida-gadget.so",Path(outputdirectory+"/lib/"+arch_name+"/libfrida-gadget.so"))
+                elif arch_name=="arm64-v8a":
+                    copyfile("gadget/arm64/libfrida-gadget.so",Path(outputdirectory+"/lib/"+arch_name+"/libfrida-gadget.so"))
+                else:
+                    copyfile("gadget/"+arch_name+"/libfrida-gadget.so",Path(outputdirectory+"/lib/"+arch_name+"/libfrida-gadget.so"))
 
     else:
         print("No lib folder found adding lib folder")
@@ -123,7 +124,7 @@ def download_gadget(arch):
         print("arch  already present removing it")
         subprocess.call(["rm","gadget/"+arch+"/libfrida-gadget.so"])
     
-    print("Downloading Architecture"+arch)
+    print("Downloading Architecture "+arch)
     url = 'https://github.com/frida/frida/releases/download/'+frida_latest_version+'/frida-gadget-'+frida_latest_version+'-android-'+arch+'.so.xz'
     wget.download(url, 'gadget/'+arch+'/libfrida-gadget.so.xz')
     subprocess.call(['unxz','gadget/'+arch+'/libfrida-gadget.so.xz'])
